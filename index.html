@@ -6,6 +6,8 @@
     <meta name="description" content="Seite mit Links zu den Projekten der 6bn" />
     <link rel="stylesheet" href="css/style.css">
 	<title>6bn 2018/19</title>
+	
+	<
 </head>
 <body>
 
@@ -18,59 +20,69 @@
 
 <main>
 
-	<nav id="navigation">
+<!--	<nav id="navigation">
 	<ul>
 		<li><a aria-current="page">Home</a></li>
 		<li><a href="thomas.html">Thomas</a></li>
 		
 	</ul>
 	</nav>
-     	
+	     	
 	<section id="intro">   
 	<h2>Willkommen <span>bei Company Mustermann GmbH</span></h2>
     <p>
 		Dies ist das <strong>SelfHTML Design Nr.03</strong>. Sie dürfen dieses Template kopieren, verändern, veröffentlichen, sogar zu kommerziellen Zwecken, ohne um weitere Erlaubnis bitten zu müssen. 
 	</p>
-    </section>
+    </section>-->
 
-    
-    <section class="spalte">
-   		 <h2>Lorem ipsum</h2>
-		<p>
-			<img src="img/dummy-3.jpg" alt="Dummybild - bitte Alternativbeschreibung einfügen">
-			Lorem ipsum dolor sit amet conis ectetuer adipiscing elit sed diame nonummy nibh euismod incidunt uti laoreetdo lore magna aliquami erat volutipat. Ut wisi enim admini m veniam, quis nostrud exercitatn ullamcorper suscipit lobortis nislit aliquip ex ea commodo consequat. Duis autemi vel eum iriure dolor in hendrerit in vulputate velites.<br>
-			<a class="more" href="1-unterseite.html">weiter lesen</a>
-		</p>
-    </section>
-
-    
-    <section class="spalte">
-		<h2>Lorem ipsum</h2>
-		<p>
-			Lorem ipsum dolor sit amet consectetiu eradipiscing elit sed diam.
-		</p>
-		<ul class="square">
-			<li><a href="#">Lorem ipsum</a></li>
-			<li><a href="#">Lorem ipsum dolor</a></li>
-			<li><a href="#">Lorem ipsmum dolor sit</a></li>
-			<li><a href="#">Lorem ipsum dolor sit amet</a></li>
-		</ul>
-		<a class="more" href="1-unterseite.html">weiter lesen</a>    
-    </section>
+	<div id="scholars"></div>
+        
 
 </main>
 
 <footer class="grid">
-    <ul id="footer-nav">
-		<li><a href="2-contact.html" title="Kontakt"><img src="img/info.svg" alt="info"></a></li>
-		<li><a href="#" title="Sitemap"><img src="img/sitemap.svg" alt="info"></a></li>
-		<li><a href="2-contact.html" title="impressum"><img src="img/print.svg" alt="print"></a></li>
-	</ul>
-    <p>
-    	Design: Duit, <a href="http://designenlassen.de/">designenlassen.de</a><br>
-		technische Umsetzung: <a href="http://selfhtml.org">selfhtml.org</a>
-    </p>    
+  
 </footer>  
+
+<script src="js/handlebars-v4.0.12.js"></script>
+    <script id="websites-template" type="text/x-handlebars-template">    
+      <div class="container">
+		{{#each scholars}}
+			<h1>{{name}}</h1>
+			<a href="{{website}}">Web</a>
+		{{/each}}        
+      </div>
+      
+    </script>
+    
+    
+    <script>
+      var content = 
+      {
+        title: "Webseiten 6bn 2017", 
+        scholars : [
+			{
+				name: "Thomas",
+				website: "https://thomaswaldner.github.io/Chivalry-Medieval-Warfare/"
+			},
+			{
+				name: "Noah",
+				website: "https://noahnussbaumer.github.io/Kriegspropaganda-1.-WK/"
+			},
+			{
+				name: "Lukas",
+				website: "https://thomaswaldner.github.io/Chivalry-Medieval-Warfare/"
+			}
+        ]     
+               
+        
+      };
+      
+      var source   = document.getElementById("websites-template").innerHTML;
+      var template = Handlebars.compile(source);
+      var target = document.getElementById("scholars");
+      target.innerHTML = template(content);
+    </script>
     
 </body>
 </html>
