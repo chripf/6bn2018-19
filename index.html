@@ -49,7 +49,8 @@
       <div class="container">
 		{{#each scholars}}
 			<h1>{{name}}</h1>
-			<a href="{{website}}">Web</a>
+			<a href="https://{{githubname}}.github.io/{{website}}">Web</a>
+			<a href="https://github.com/{{githubname}}/{{website}}">Projekt</a>
 		{{/each}}        
       </div>
       
@@ -63,19 +64,23 @@
         scholars : [
 			{
 				name: "Thomas",
-				website: "https://thomaswaldner.github.io/Chivalry-Medieval-Warfare/"
+				githubname: "thomaswaldner",				
+				website: "Chivalry-Medieval-Warfare"
 			},
 			{
 				name: "Noah",
-				website: "https://noahnussbaumer.github.io/Kriegspropaganda-1.-WK/"
+				githubname: "noahnussbaumer",
+				website: "Kriegspropaganda-1.-WK"
 			},
 			{
 				name: "Lukas",
-				website: "https://LukasMoosbrugger.github.io/Astronomie/"
+				githubname: "LukasMoosbrugger",
+				website: "Astronomie"
 			},
 			{
 				name: "Elias",
-				website: "https://elivondi.github.io/Deus-Vult/"
+				githubname: "elivondi",
+				website: "Deus-Vult"
 			},
         ]     
                
