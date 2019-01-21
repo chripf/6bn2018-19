@@ -30,9 +30,11 @@
     <script id="websites-template" type="text/x-handlebars-template">    
       <div class="container">
 		{{#each scholars}}
+		<div class="website-info">
 			<h1>{{name}}</h1>
 			<a href="https://{{githubname}}.github.io/{{website}}">Web</a>
 			<a href="https://github.com/{{githubname}}/{{website}}">Projekt</a>
+		</div>
 		{{/each}}        
       </div>
       
